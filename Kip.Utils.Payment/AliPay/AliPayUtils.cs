@@ -2,6 +2,7 @@
 using Aop.Api.Request;
 using Aop.Api.Response;
 using Aop.Api.Util;
+using Kip.Utils.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace Kip.Utils.Payment.AliPay
             sortedData.Add("timestamp", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); //发送请求的时间，格式"yyyy-MM-dd HH:mm:ss"
             sortedData.Add("version", "1.0");
             sortedData.Add("notify_url", AliPayConfig.notify_url);
-            sortedData.Add("biz_content", PaymentTools.Serializer(biz_content));  //业务请求参数的集合
+            sortedData.Add("biz_content", JsonUtils.Serializer(biz_content));  //业务请求参数的集合
 
             //商户请求参数的签名串
             string sign = AlipaySignature.RSASign(sortedData, AliPayConfig.merchant_private_key, "utf-8", true, "RSA");

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
-using Newtonsoft.Json;
 
 namespace Kip.Utils.Payment
 {
@@ -34,23 +33,6 @@ namespace Kip.Utils.Payment
             retStr = System.BitConverter.ToString(outputBye);
             retStr = retStr.Replace("-", "").ToUpper();
             return retStr;
-        }
-        #endregion
-
-        #region [Json序列化]
-        public static string Serializer(object obj)
-        {
-            return JsonConvert.SerializeObject(obj);
-        }
-
-        public static string Serializer<T>(T t)
-        {
-            return JsonConvert.SerializeObject(t);
-        }
-
-        public static T Deserialize<T>(string jsonString)
-        {
-            return JsonConvert.DeserializeObject<T>(jsonString);
         }
         #endregion
         
