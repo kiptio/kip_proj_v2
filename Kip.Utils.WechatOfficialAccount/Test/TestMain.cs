@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Kip.Utils.WechatOfficialAccount.Test
 {
-    public class TestCore
+    public class TestMain
     {
         #region [验证]
         public void TestValid(HttpRequestBase request, HttpResponseBase response)
