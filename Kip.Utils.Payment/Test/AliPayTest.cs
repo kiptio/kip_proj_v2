@@ -7,10 +7,10 @@ using System.Web;
 
 namespace Kip.Utils.Payment.Test
 {
-    public class AliPayTest
+    class AliPayTest
     {
         #region [生成订单预付信息]
-        public string Test_GeneratePaymentInfo()
+        public string GeneratePaymentInfo()
         {
             PaymentOrder paymentOrder = new PaymentOrder();
             paymentOrder.OrderNo = "1000000858585"; // "your order no"
@@ -28,7 +28,7 @@ namespace Kip.Utils.Payment.Test
         /// https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.LWyWoI&treeId=204&articleId=105301&docType=1#s6
         /// </summary>
         /// <returns></returns>
-        public string Test_Alipay_Notify(HttpRequestBase request)
+        public string Alipay_Notify(HttpRequestBase request)
         {
             // 所有参数转成字典
             IDictionary<string, string> paramsMap = request.Form.AllKeys.ToDictionary(o => o, o => request.Form[o]);

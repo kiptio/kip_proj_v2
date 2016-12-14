@@ -7,24 +7,24 @@ using System.Web;
 
 namespace Kip.Utils.WechatOfficialAccount.Test
 {
-    public class TestMain
+    class TestMain
     {
         #region [验证]
-        public void TestValid(HttpRequestBase request, HttpResponseBase response)
+        public void Valid(HttpRequestBase request, HttpResponseBase response)
         {
             WechatApi.TestInstance.Valid(request, response);
         }
         #endregion
 
         #region [获取AccessToken]
-        public string TestGetAccessToken()
+        public string GetAccessToken()
         {
             return WechatApi.TestInstance.GetAccessToken();
         }
         #endregion
 
         #region [自动回复]
-        public void TestResponseMessage(HttpRequestBase request, HttpResponseBase response)
+        public void ResponseMessage(HttpRequestBase request, HttpResponseBase response)
         {
             WechatApi.TestInstance.ResponseMessage(request, response, (requestModel, responseContent) =>
             {
